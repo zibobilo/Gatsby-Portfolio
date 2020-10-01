@@ -20,7 +20,7 @@ const ContactPage = ({
           <p>Let me help you kick start your next project &rarr;</p>
         </div>
         <div>
-          <form className="form-container" action="https://sendmail.w3layouts.com/SubmitContactForm" method="post">
+          <form className="form-container" action="https://api.getform.io/v1/forms/c3e4cbc1-20f7-4e50-abd4-28df5aa01c43?token=5OSBgmurYjwmCsn947ebXbfIu9PUYc5XPC0oAKOwWKQt5O54MZpZ4YPSAdXg" method="post">
             <div>
               <label htmlFor="w3lName">Name</label>
               <input type="text" name="w3lName" id="w3lName"/>

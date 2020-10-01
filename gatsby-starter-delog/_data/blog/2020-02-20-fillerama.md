@@ -1,50 +1,234 @@
 ---
 template: BlogPost
-path: /fillerama
-date: 2020-02-20T14:59:36.571Z
-title: Dummy Content from Fillerama
+path: /hackerRank-ProjectEuler-0-to-10
+date: 2020-09-29T14:59:36.571Z
+title: 0 to 5 HackerRank/Project Euler Algorithms (in JavaScript)
 thumbnail: /assets/image-5.jpg
+metaDescription: Coded a script to help Americans know their rights in massive eviction threats.
 ---
-# No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister.
+# 0 - HackerRank IDE
 
-I am the Doctor, and you are the Daleks! You hit me with a cricket bat. You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better? You hit me with a cricket bat.
+Let's walk through how the HackerRank IDE and how works. 
+1. Visit [Project Euler 1](https://www.hackerrank.com/contests/projecteuler/challenges/euler001/problem?isFullScreen=true).
+2. I'd recommend to log in, but you don't have to.
+3. Select the appropriate compiler (top-right corner) => JavaScript (Node.js)
 
-You've swallowed a planet! No… It's a thing; it's like a plan, but with more greatness. You hate me; you want to kill me! Well, go on! **Kill me!** *KILL ME!* Sorry, checking all the water in this area; there's an escaped fish.
 
-## Did I mention we have comfy chairs?
+This block of Node.js is what will make HackerRank get Inputs and Outputs to work with your algorithm. Don't worry too much about this if you are just starting.
+``` javascript
+process.stdin.resume();
+process.stdin.setEncoding('ascii');
 
-No… It's a thing; it's like a plan, but with more greatness. Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you?
+var input_stdin = "";
+var input_stdin_array = "";
+var input_currentline = 0;
 
-1. \*Insistently\* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do!
-2. Sorry, checking all the water in this area; there's an escaped fish.
-3. Father Christmas. Santa Claus. Or as I've always known him: Jeff.
+process.stdin.on('data', function (data) {
+    input_stdin += data;
+});
 
-### I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
+process.stdin.on('end', function () {
+    input_stdin_array = input_stdin.split("\n");
+    main();    
+});
 
-It's a fez. I wear a fez now. Fezes are cool. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? Sorry, checking all the water in this area; there's an escaped fish.
+function readLine() {
+    return input_stdin_array[input_currentline++];
+}
 
-* I am the last of my species, and I know how that weighs on the heart so don't lie to me!
-* You hit me with a cricket bat.
-* You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better?
+```
+Here comes the fun part, we will work in this function or any other functions we want to add in this second block.
+``` javascript
+function main() {
+    var t = parseInt(readLine());
+    for(var a0 = 0; a0 < t; a0++){
+        var n = parseInt(readLine());
+    }
+}
+```
 
-I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
+- - - 
+#[1 - Multiples of 3 and 5](https://www.hackerrank.com/contests/projecteuler/challenges/euler001/problem?isFullScreen=true)
+> *"If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3,5,6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below N."*
 
-It's a fez. I wear a fez now. Fezes are cool. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
+There is a mutitude of solutions to this problem, let's start with a simple one => **Time O(n) & Space O(1)**. This means that we will go number by number and add them up as we go. We will make a loop that goes from 1 to n and store one number at a time.
 
-You know how I sometimes have really brilliant ideas? Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you?
+``` javascript
+function main() {
+  var t = parseInt(readLine());
+  for (var a0 = 0; a0 < t; a0++){
+    var n = parseInt(readLine());
 
-You've swallowed a planet! They're not aliens, they're Earth…liens! You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better?
+    let result = 0
 
-Father Christmas. Santa Claus. Or as I've always known him: Jeff. \*Insistently\* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do! No… It's a thing; it's like a plan, but with more greatness.
+    for (let i = 0; i < n; i++) {
 
-\*Insistently\* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do! You've swallowed a planet! I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why.
+```
+If my number is divisible by 5 or 3 add it to my result.
 
-It's art! A statement on modern society, 'Oh Ain't Modern Society Awful?'! All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? Saving the world with meals on wheels.
+``` javascript
+      if (i % 5 === 0 || i % 3 === 0) {
+        result += i
+      }
+    }
+```
+and simply print my result after the loop from 1 to n is done.
+``` javascript
+    console.log(result)
+  }
+}
+```
+Sadly, this solution is not fast enough to pass time requirements, let's explore the fastest solution in Time O(1). But first we need to understand the formula of the sums of natural numbers.
 
-You've swallowed a planet! Heh-haa! Super squeaky bum time! All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better?
+# Solution in Time O(1)
 
-No… It's a thing; it's like a plan, but with more greatness. It's a fez. I wear a fez now. Fezes are cool. You hate me; you want to kill me! Well, go on! Kill me! KILL ME! Saving the world with meals on wheels.
+How to calculate the sum from 1 to n ?
+``` txt
+// Psedo code
 
-You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better? Sorry, checking all the water in this area; there's an escaped fish. You hit me with a cricket bat.
+if n = 10 then
 
-Did I mention we have comfy chairs? Stop talking, brain thinking. Hush. No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister. You know how I sometimes have really brilliant ideas?
+1 + n   = 11     // 1     +     10
+2 + n-1 = 11     //  2    +    9   Same result
+3 + n-2 = 11     //   3   +   8    Same result
+4 + n-3 = 11     //    4  +  7     Same result
+5 + n-4 = 11     //     5 + 6      Same result
+
+11 + 11 + 11 + 11 + 11 = 55
+or 
+5 x 11 = 55  =>  (10/2) x 11 = 55  => (n/2) x (1 + n) = 55
+
+The sum of all numbers from 1 to 10 is 55
+```
+From this pattern we can establish that (n * (n + 1)) / 2 is the formula to calculate the sum of natural numbers from 1 to N.
+
+Now how about we apply this formula and differ it to grab only the items divisible by 3
+
+```txt
+I'll take the sum of natural numbers n / 3 and then the answer multiplied by 3.
+
+Let's say that a = n/3
+our answer would be => a * (a + 1) / 2) * 3
+
+
+```
+If we add the sum of natural numbers n/3 and n/5 and then multiply it by 3 and 5, we will count all numbers divisible by 15 twice. so we need to take out once the sum of the numbers divisible by 15. Let's do this in code.
+
+<iframe height="510" style="width: 100%;" scrolling="no" title="Project Euler 001" src="https://codepen.io/zibobilo/embed/PoZByPz?height=615&theme-id=39046&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/zibobilo/pen/PoZByPz'>Project Euler 001</a> by zibobilo
+  (<a href='https://codepen.io/zibobilo'>@zibobilo</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+[Check this codepen here](https://codepen.io/zibobilo/pen/PoZByPz)
+
+Remember to use BigInt for numbers that exceeds  2e53, thats a reason why you will find a 'n' after each number (they become BigInt Numbers), and I return the large BigInt Number as a string without the 'n' at the end. Also remember to never to mix regular numbers with BigInt Numbers.
+
+- - - 
+#[2 - Even Fibonacci numbers](https://www.hackerrank.com/contests/projecteuler/challenges/euler002/problem?isFullScreen=true)
+
+> *Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms will be: ~~0~~, 1, <span style="color:red">2</span>, 3, 5, <span style="color:red">8</span>, 13, 21, <span style="color:red">34</span>, 55, 89...<br> By considering the terms in the Fibonacci sequence whose values do not exceed N, find the sum of the even-valued terms.*
+
+Note that every 3 numbers (in red) are pair, this pattern will help us solve this problem.
+
+<iframe height="680" style="width: 100%;" scrolling="no" title="Project Euler 002" src="https://codepen.io/zibobilo/embed/xxZJmaa?height=300&theme-id=39046&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/zibobilo/pen/xxZJmaa'>Project Euler 002</a> by zibobilo
+  (<a href='https://codepen.io/zibobilo'>@zibobilo</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+[Check this codepen here](https://codepen.io/zibobilo/pen/xxZJmaa)
+
+- - -
+
+#[3 - Largest prime factor](https://www.hackerrank.com/contests/projecteuler/challenges/euler004/problem)
+
+> *The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of a given number N ?*
+
+In this algorithm it is important to know that a number cannot be divided by a greater (prime) number than the square root of the number N, for that reason, the approach I decided to make is to divide N by 2 for as long N is divisible by 2, and divide N by 2 at each iteration. 
+I then make a loop to eliminate each possible divisible number until I reach square root of N. And print N with all the transformations he went through.
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="Project Euler 003" src="https://codepen.io/zibobilo/embed/vYLabyN?height=300&theme-id=39046&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/zibobilo/pen/vYLabyN'>Project Euler 003</a> by zibobilo
+  (<a href='https://codepen.io/zibobilo'>@zibobilo</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+[Check this codepen here](https://codepen.io/zibobilo/pen/vYLabyN)
+
+- - -
+
+#[4 - Largest palindrome product](https://www.hackerrank.com/contests/projecteuler/challenges/euler004/problem?isFullScreen=true)
+
+> *A palindromic number reads the same both ways. The smallest 6 digit palindrome made from the product of two 3-digit numbers is 101101 = 143 x 707. Find the largest palindrome made from the product of two 3-digit numbers which is less than N.*
+
+I created a simple function to help me find palindromes
+```javascript
+function testPalindrome(n) {
+  return n.split("").reverse().join("");
+}
+```
+I will create a list of palindromes and store it in the variable "numbers" before any input gets passed in.
+```javascript
+for (let i = 100; i < 1000; i++) {
+  for (let j = i; j < 1000; j++) {
+    number = i * j;
+    if (number == testPalindrome(String(number))) {
+      numbers.push([number, i, j])
+    }
+  }
+}
+```
+I am going now to check each input and see what is the highest palindrome in my "numbers list" but yet smaller than N (the input).
+```javascript
+for(var a0 = 0; a0 < t; a0++){
+  var n = parseInt(readLine());
+  let maxPal = 0
+  for (let i = 0; i < numbers.length; i++) {
+    if ( maxPal < numbers[i][0] && numbers[i][0] < n) {
+      maxPal = numbers[i][0]
+    }
+  } 
+  console.log(maxPal)
+}
+```
+#
+<iframe height="600" style="width: 100%;" scrolling="no" title="YzqbxGp" src="https://codepen.io/zibobilo/embed/YzqbxGp?height=300&theme-id=39046&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/zibobilo/pen/YzqbxGp'>YzqbxGp</a> by zibobilo
+  (<a href='https://codepen.io/zibobilo'>@zibobilo</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+[Check this codepen here](https://codepen.io/zibobilo/pen/vYLabyN)
+- - -
+#[5 - Smallest multiple](https://www.hackerrank.com/contests/projecteuler/challenges/euler005/problem?isFullScreen=true)
+
+> *"2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.What is the smallest positive number that is evenly divisible(divisible with no remainder) by all of the numbers from 1 to N?"*
+
+```javascript
+function main() {
+  var t = parseInt(readLine());
+  for (var a0 = 0; a0 < t; a0++){
+    var n = BigInt(parseInt(readLine()));
+    let result = 1n
+    for (let i = 1n; i <= n; i++) {
+      result *= i
+    }
+    
+    for (let i = 2n; i <= n; i++) {
+      let resTest = result/i
+      for (let j = 2n; j <= n; j++) {
+        if (resTest % j === 0n) {}
+        else { break }
+        if (j === n) {
+          result /= i
+          i--
+        }
+      }
+    }
+    console.log(String(result).slice(0, result.length))
+  }
+}
+
+```
+#
+<iframe height="600" style="width: 100%;" scrolling="no" title="Project Euler 005" src="https://codepen.io/zibobilo/embed/PoNvKOQ?height=300&theme-id=39046&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/zibobilo/pen/PoNvKOQ'>Project Euler 005</a> by zibobilo
+  (<a href='https://codepen.io/zibobilo'>@zibobilo</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
