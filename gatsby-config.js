@@ -37,7 +37,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it. replace with yours
-        trackingId: "UA-164743872-1",
+        trackingId: "",
         head: true,
       }
     },
@@ -50,7 +50,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#381696`,
         display: `standalone`,
-        icon: "src/images/icon.png",
+        icon: "src/images/icon-512x512.jpg",
       },
     },
     `gatsby-plugin-sass`, 
