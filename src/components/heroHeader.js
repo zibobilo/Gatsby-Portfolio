@@ -17,7 +17,7 @@ export default () => (
     render={data => (
       <div className="hero-header">
         <div id="circle-shape">
-          <img src="https://burkdev.com/Raphael-Burkhardt-picture.jpg" alt="Raphael Burkhardt profile picture" class="curve">
+          <img src="https://burkdev.com/assets/Raphael-Burkhardt-picture.jpg" alt="Raphael Burkhardt profile picture" class="curve">
           </img>
           <div className="headline">{data.site.siteMetadata.home.title}</div>
           <div 
