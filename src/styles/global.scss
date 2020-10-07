@@ -412,7 +412,8 @@ body.light {
 }
 
 #circle-shape p { 
-  line-height: 1.8; 
+  line-height: 1.8;
+  text-align: justify;
 }
 #circle-shape .curve { 
   width: 34%; height: auto;
@@ -430,5 +431,19 @@ body.light {
 @media screen and (max-width: 1200px) {
   #circle-shape img {
     margin: 0 0 0 -3rem; 
+  }
+}
+@media screen and (max-width: 650px) {
+  .site-title a {
+    font-size: 4vw;
+  }
+  .headline {
+    text-align: center;
+  }
+  #circle-shape .curve {
+    text-align: center;
+    min-width: 100%;
+    margin: 0;
+    float: none;
   }
 }
