@@ -405,3 +405,20 @@ body.light {
     top: 8px;
     left: 2px
 }
+
+#circle-shape { 
+  font-family: Open Sans, sans-serif; 
+  margin: 2rem; 
+}
+#circle-shape p { 
+  line-height: 1.8; 
+}
+#circle-shape .curve { 
+  width: 33%; height: auto;
+  min-width: 150px;
+  float: left;
+  margin-right:2rem; 
+  border-radius: 50%;
+  -webkit-shape-outside:circle();
+  shape-outside:circle();
+}
