@@ -17,15 +17,14 @@ export default () => (
     render={data => (
       <div className="hero-header">
         <div id="circle-shape">
-          <img src="https://burkdev.com/assets/Raphael-Burkhardt-picture.jpg" alt="Raphael Burkhardt profile picture" class="curve">
+          <img src="https://burkdev.com/assets/Raphael-Burkhardt-picture.jpg" alt="Raphael Burkhardt profile picture" className="curve">
           </img>
           <div className="headline">{data.site.siteMetadata.home.title}</div>
           <div 
             className="primary-content" 
             dangerouslySetInnerHTML={{ __html: data.site.siteMetadata.home.description}}
           />
-
-          <p>I have a bachelor’s degree in Communication and a master’s degree in Digital Communication. 
+          <p className="primary-content" style={{alignText: "justify", textJustify: "inter-word"}}>I have a bachelor’s degree in Communication and a master’s degree in Digital Communication. 
           My background entails 4+ years in web design using WordPress and implementing SEO practices with various clients. 
           In September 2019, I graduated from Wyncode Academy with a Full Stack Web Developer certification. 
           Since then, I've been starting to develop meaningful projects that you can explore below. <b>I am passionate about not only coding, but coding in the most efficient and 

@@ -104,14 +104,15 @@ a {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 900;
+  font-size: 1.8rem;
   text-transform: uppercase;
 }
 .hero-header {
   padding: 0 0 64px;
-  max-width: 980px;
+  max-width: 1140px;
 }
 .headline {
-  font-size: 36px;
+  font-size: 45px;
   font-weight: 900;
   margin-bottom: 0.5rem;
 }
@@ -403,22 +404,31 @@ body.light {
     border: 2px solid transparent;
     box-shadow: 0 0 0 2px;
     top: 8px;
-    left: 2px
+    left: 2px;
 }
 
 #circle-shape { 
-  font-family: Open Sans, sans-serif; 
-  margin: 2rem; 
+  margin: 1rem;
 }
+
 #circle-shape p { 
   line-height: 1.8; 
 }
 #circle-shape .curve { 
-  width: 33%; height: auto;
+  width: 34%; height: auto;
   min-width: 150px;
   float: left;
-  margin-right:2rem; 
+  margin-right: 3rem; 
   border-radius: 50%;
   -webkit-shape-outside:circle();
   shape-outside:circle();
+}
+#circle-shape img{
+  margin: 0 0 0 -6rem; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media screen and (max-width: 1200px) {
+  #circle-shape img {
+    margin: 0 0 0 -3rem; 
+  }
 }
