@@ -1,6 +1,6 @@
 ---
 template: BlogPost
-path: /hackerRank-ProjectEuler-0-to-10
+path: /hackerRank-ProjectEuler-0-to-5
 date: 2020-09-29T14:59:36.571Z
 title: 0 to 5 HackerRank/Project Euler Algorithms (in JavaScript)
 thumbnail: /assets/image-5.jpg
