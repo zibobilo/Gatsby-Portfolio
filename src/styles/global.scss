@@ -155,7 +155,6 @@ a {
   color: var(--text-color);
   line-height: 1.5;
   > .blog-post-content {
-    max-width: 768px;
     margin: 0 auto;
   }
   > .blog-post-content *:last-child,
@@ -172,7 +171,7 @@ a {
     margin-bottom: 32px;
     text-align: center;
   }
-  
+
 }
 .post-thumbnail {
   text-align: center;
@@ -299,13 +298,13 @@ a {
   }
 }
 /* Portrait and Landscape */
-@media only screen 
+@media only screen
 and (min-width: 768px) {
 .grids {
   grid-template-columns: 1fr 1fr;
 }
 }
-@media only screen 
+@media only screen
   and (min-width: 1024px) {
   .grids {
     grid-template-columns: 1fr 1fr 1fr;
@@ -407,30 +406,30 @@ body.light {
     left: 2px;
 }
 
-#circle-shape { 
+#circle-shape {
   margin: 1rem;
 }
 
-#circle-shape p { 
+#circle-shape p {
   line-height: 1.8;
   text-align: justify;
 }
-#circle-shape .curve { 
+#circle-shape .curve {
   width: 34%; height: auto;
   min-width: 150px;
   float: left;
-  margin-right: 3rem; 
+  margin-right: 3rem;
   border-radius: 50%;
   -webkit-shape-outside:circle();
   shape-outside:circle();
 }
 #circle-shape img{
-  margin: 0 0 0 -6rem; 
+  margin: 0 0 0 -6rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media screen and (max-width: 1200px) {
   #circle-shape img {
-    margin: 0 0 0 -3rem; 
+    margin: 0 0 0 -3rem;
   }
 }
 @media screen and (max-width: 650px) {

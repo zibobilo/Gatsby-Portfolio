@@ -37,7 +37,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it. replace with yours
-        trackingId: "",
+        trackingId: "tobechanged",
         head: true,
       }
     },
@@ -53,7 +53,7 @@ module.exports = {
         icon: "src/images/icon-512x512.jpg",
       },
     },
-    `gatsby-plugin-sass`, 
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
     'gatsby-plugin-dark-mode',
