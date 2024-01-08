@@ -1,6 +1,6 @@
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
-export default () => (
+import { StaticQuery, graphql } from "gatsby"
+const HeroHeader = () => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -17,7 +17,7 @@ export default () => (
     render={data => (
       <div className="hero-header">
         <div id="circle-shape">
-          <img src="https://burkdev.com/assets/Raphael-Burkhardt-picture.jpg" alt="Raphael Burkhardt profile picture" className="curve">
+          <img src="https://burkdev.com/assets/Raphael-Burkhardt-picture.jpg" alt="Raphael Burkhardt profile" className="curve">
           </img>
           <div className="headline">{data.site.siteMetadata.home.title}</div>
           <div
@@ -40,3 +40,4 @@ export default () => (
     )}
   />
 )
+export default HeroHeader
